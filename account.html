@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Account Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="accounts">
+
+<header>
+    <h1>MediCare</h1>
+    <p>Hospital Staff Scheduling System</p>
+    <nav>
+        <a href="schedule.html">Schedule</a>
+        <a href="staff.html">Staff</a>
+        <a href="openswap.html">Open/Swap Shift</a>
+        <a href="approval.html">Approval</a>
+        <button onclick="logoutUser()" id="logoutBtn">Log out</button>
+    </nav>
+</header>
+
+<section class="staff-section">
+    <h2>Account Management</h2>
+    <p>Create and manage staff accounts.</p>
+
+    <div class="leave-request-box" id="setupSection">
+        <h3>Initial Admin Setup</h3>
+        <p>No Admin account exists yet. Create the first Admin account to begin.</p>
+
+        <form id="setupForm">
+            <label>Admin Username</label>
+            <input type="text" id="setupUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="setupPassword" minlength="6" required>
+
+            <label>Confirm Password</label>
+            <input type="password" id="setupConfirmPassword" required>
+
+            <button type="submit">Create Admin Account</button>
+            <p id="setupMessage"></p>
+        </form>
+    </div>
+
+    <div class="leave-request-box" id="accountSection">
+        <h3>Create Staff Account</h3>
+
+        <form id="accountForm">
+            <label>Staff Member</label>
+            <select id="accountStaff" required>
+                <option value="">Select staff member</option>
+            </select>
+
+            <label>Username</label>
+            <input type="text" id="newUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="newPassword" minlength="6" required>
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" required>
+
+            <button type="submit">Create Account</button>
+            <p id="accountMessage"></p>
+        </form>
+    </div>
+
+    <div class="leave-request-box">
+        <h3>Registered Accounts</h3>
+        <div id="accountList">
+            <p>Loading accounts...</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MediCare Hospital Staff Scheduling System</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="accounts.js"></script>
+</body>
+</html>
